@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MyClass {
+public class Challenge590 {
     public static int neighborMines(int[][] matrix, int r, int c) {
         if (matrix[r][c] == 1)
             return 9;
