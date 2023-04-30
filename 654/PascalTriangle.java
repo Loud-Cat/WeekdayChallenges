@@ -6,10 +6,14 @@ import java.util.Collections;
 public class PascalTriangle {
 	private List<List<Integer>> triangle;
 	
+	/** Creates a triangle with a small initial size */
 	public PascalTriangle() {
 		this(2);
 	}
 	
+	/** Creates a triangle with the specified size
+	  * @param size the initial size of the triangle
+	  */
 	public PascalTriangle(int size) {
 		triangle = new ArrayList<>();
 		
@@ -17,10 +21,17 @@ public class PascalTriangle {
 		fill(2);
 	}
 	
+	/** Returns a copy of the triangle
+	  * @return a copy of the triangle
+	  */
 	public List<List<Integer>> getTriangle() {
 		return new ArrayList<>(triangle);
 	}
 	
+	/** Fills the triangle with correct values starting from the given row.
+	  * Allows the triangle to skip values that already exist.
+	  * @param start the starting row to start at.
+	  */
 	private void fill(int start) {
 		for (List<Integer> row : triangle) {
 			row.set(0, 1);
@@ -35,6 +46,11 @@ public class PascalTriangle {
 			}
 	}
 	
+	/** Ensures that the triangle has at least n rows.
+	  * If the triangle has more than the given number of rows, it does nothing.
+	  * It does not remove any extra rows.
+	  * @param size the minimum number of rows
+	  */
 	public void ensureSize(int size) {
 		int length = triangle.size();
 		
